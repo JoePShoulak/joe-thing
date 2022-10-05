@@ -1,0 +1,14 @@
+services:
+  postgres:
+    container_name: todo-database
+    image: postgres:latest
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: secret
+      POSTGRES:DB: postgres
+    volumes:
+      - ./postgres-data:/c/Users/bette/todo-data
+      # Point this at the file you would like to load
+      # - .place/you/want/to/go:/docker-entrypoint-initdb.d/db_dump.sql
